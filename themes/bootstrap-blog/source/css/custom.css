@@ -134,7 +134,15 @@ code {
  */
 
 .blog-header {
+  display: flex;
   padding-bottom: 20px;
+}
+.blog-header-gravitar {
+  margin-top: 30px;
+  width: 100px;
+}
+.blog-header-title {
+  flex-grow: 1;
 }
 .blog-title {
   margin-top: 30px;

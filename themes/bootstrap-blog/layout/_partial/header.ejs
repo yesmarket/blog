@@ -1,6 +1,11 @@
 <div class="blog-header">
-  <h1 class="blog-title"><%= config.title %></h1>
-  <% if (theme.subtitle){ %>
-    <p class="lead blog-description"><%= theme.subtitle %></p>
-  <% } %>
+	<div class="blog-header-gravitar">
+		<img src="<%- gravatar('rbartsch@adam.com.au') %>" />
+	</div>
+	<div class="blog-header-title">
+		<h1 class="blog-title"><%= config.title %></h1>
+		<% if (theme.subtitle){ %>
+			<p class="lead blog-description"><%= theme.subtitle %></p>
+		<% } %>
+	</div>
 </div>
