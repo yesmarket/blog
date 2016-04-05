@@ -1,3 +1,4 @@
 [submodule "public"]
 	path = public
 	url = git@github.com:yesmarket/yesmarket.github.io.git
+	branch = master
