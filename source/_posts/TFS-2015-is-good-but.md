@@ -30,6 +30,6 @@ Most of the other things are all pretty minor and will *hopefully* be fixed as t
 * You can apply arbitrary tags to work-items, however you can't use them as the grouping column in a chart. I would have thought this would be one of main reasons for using tags.
 * There is no way to add calculated columns to your queries - think calculated fields in SSRS datasets.
 * There are some very basic [variables](https://msdn.microsoft.com/en-us/library/dd286638.aspx#qvariables) that you can use in your queries e.g. @Today, however this seems to be a bit lacking. I wanted to create a query for work-items completed for the current month, but this isn't possible.
-* I wanted to create some more complex reports in SSRS to display on the management dashboard, but there is no out-of-the-box SSRS reporting widget.
+* I wanted to create some more complex reports in SSRS to display on the management dashboard, but there is no out-of-the-box SSRS reporting widget. I also tried creating a custom widget that displayed a configurable URL in an iframe with the URL being set to the path of my SSRS report. I thought I was pretty clever, that is, until I realised that customised widgets were only available in [VSTS](https://www.visualstudio.com/en-us/products/visual-studio-team-services-vs.aspx) - fail.
 * Lack of templating in TF-Build.
 * You can't create multiple backlog boards for an individual team-project.

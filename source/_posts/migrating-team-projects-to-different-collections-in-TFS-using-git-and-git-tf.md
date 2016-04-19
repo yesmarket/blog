@@ -24,7 +24,7 @@ There were roughly 50 team projects of varying size that needed to get migrated,
 - checking everything in using git-tf
 - setting up long running branches and folder structure for gitflow using native TFS commands and git-tf
  
-I scripted everything into a PowerShell module called TfsMigrationExtensions, which is on GitHub. I used commands from this module as follows on a per team-project basis:
+I scripted everything into a PowerShell module called [TfsMigrationExtensions](https://github.com/yesmarket/TfsMigrationExtensions). I used commands from this module as follows on a per team-project basis:
  
     $ Initialize-TeamProject -collection $destinationcollection -teamprojectname $destinationname -workspace $workspacename
     $ Copy-TeamProject -sourcecollection $sourcecollection -sourcename $sourcename -sourcebranch $sourcebranch -destinationcollection $destinationcollection -destinationname $destinationname -usermappath $usermappath

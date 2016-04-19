@@ -1,5 +1,5 @@
 ---
-title: Query-by-specification part 1
+title: Query-by-specification part 1 - the problem with repositories
 language: default
 date: 2016-04-05 19:35:24
 tags:
@@ -29,7 +29,7 @@ SRP and OCP are part of the [SOLID](https://www.pluralsight.com/courses/principl
 
 Taking everything above into account, it’s still important to remain pragmatic – the repository pattern is a good de-facto approach for most data access layers. Only when there is a high level of uncertainty, change and complexity should we look for alternatives.
 
-Let us explore this a little bit deeper with an example. I’m currently working for 'a bank' and there is the concept of 'loans'. The loans data model isn’t overly complex, but evidently there are many ways of querying for loans. As a relatively core concept for a banking institution, it could be anticipated with a fairly high level of certainty that as time goes on there will be requirements coming in to query this data model with many different criteria. This is a situation where the repository pattern alone might not be the ideal solution.
+Let us explore this a little bit deeper with an example. I’m currently working for 'a bank' and there is the concept of 'loans'. The loans data model isn’t overly complex, but evidently there are many ways of querying for loans. In the last few months alone, I've had to update the repository with several new query operations - a clear violation of OCP. In regards to refactoring for OCP, my usual approach is to follow the 'fool me once shame on you, fool me twice shame on me' proverb. Basically what this means is that I don't initially build software conforming to OCP as it's something that usually incurrs a bit of a cost in terms of time and complexity - in a word it's YAGNI. If when I do need to change a class, the first time is 'shame on you'. If I need to change that same class a second time; 'shame on me' (and time to refactor for OCP). Anyway, back to my scenario...
 
 If we go the vanilla repository pattern route we might have an initial loan repository abstraction as follows (obviously this is based on the initial requirements of the system):
 
