@@ -5,6 +5,7 @@ date: 2015-07-08 13:06:34
 tags:
   - .NET
   - dev
+  - log4net
 ---
 
 If you're using a logging framework like [log4net](https://logging.apache.org/log4net/) or [nlog](http://nlog-project.org/) and you've got multiple log messages being written concurrently from different objects in the call stack, you should consider contextual logging.

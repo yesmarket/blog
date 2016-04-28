@@ -5,6 +5,8 @@ date: 2015-07-09 15:02:46
 tags:
   - AWS
   - dev
+  - IAM
+  - S3
 ---
 
 At the company where I work, we've procured a consultancy to do some work on the upgrade and merging of 2 separate [Kentico](http://www.kentico.com/) websites. Makes total sense to outsource this work as they've got the expertise and "CMS" isn't a core capability of my workplace. Anyway they need the content and databases for both sites, which sums to about 10 gig in total. They don't have an FTP server and the suggestion was made to physically deliver this data securely via traditional means...
