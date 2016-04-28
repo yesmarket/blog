@@ -40,9 +40,10 @@ namespace Console.Host
             {
                 cfg.Service<IServiceManager>(instance =>
                 {
-                    instance.ConstructUsing(() => new ServiceManager());
-                    instance.WhenStarted(manager => manager.Start());
-                    instance.WhenStopped(manager => manager.Stop());
+                    instance
+                        .ConstructUsing(() => new ServiceManager())
+                        .WhenStarted(manager => manager.Start())
+                        .WhenStopped(manager => manager.Stop());
                 });
 
                 cfg.SetServiceName("TestService");
@@ -76,7 +77,13 @@ namespace Console.Host
 ```
 I've personally used this approach for hosting WCF services as windows-services where my services expose net.tcp endpoints so that I can do distrubuted transactions - works like a charm.
 
-The only other thing to mention is how to install the service into windows (in shared environments). Basically this is as simple as <code lang="sh" linenumbers="off">./NameOfConsoleApp.exe install</code>. 
+The only other thing to mention is how to install the service into windows (in shared environments). Basically this is as simple as <code lang="sh" linenumbers="off">./NameOfConsoleApp.exe install</code>.
 
-For more information about what you can do via the command line run <code lang="sh" linenumbers="off">./NameOfConsoleApp.exe help</code>.
+... and wallah
+</div>
+
+<img style="float: left;" src="/images/honourable-test-service.png">
+
+<div style="clear:both;">
+	For more information about what you can do via the command line run <code lang="sh" linenumbers="off">./NameOfConsoleApp.exe help</code>.
 </div>
