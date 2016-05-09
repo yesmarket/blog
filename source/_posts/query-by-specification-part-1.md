@@ -15,7 +15,7 @@ Instead of writing one massive blog entry, I’ve decided to write this as a ser
 
 Anyways, I’m going to break it down as follows:
 * [Part 1 – the problem with repositories](#part1)
-* [Part 2 – specifications to the rescue](#)
+* [Part 2 – specifications to the rescue](/2016/05/query-by-specification-part-2/)
 * [Part 3 – introducing my own query.by.specification framework](#)
 
 <a name="part1"></a>Many projects that I’ve worked on in the past have a data access layer and use relation databases as the data store. For many years I’ve used object-relation-mappers (ORMs) such as [NHibernate](http://nhibernate.info/) or [Entity Framework](https://msdn.microsoft.com/en-au/data/ef.aspx) to solve the impedance mismatch problem and to allow me to work with a level of persistence ignorance.
@@ -35,7 +35,7 @@ If we go the vanilla repository pattern route we might have an initial loan repo
 
 <pre><code class='language-cs'>public interface ILoanRepository
 {
-    Loan GetLoanById(int id);
+    IEnumerable<Loan> GetByLoanNumber(int loanNumber);
 }
 </code></pre>
 
@@ -43,13 +43,13 @@ Let’s say a new requirement comes in that requires the creation of a new servi
 
 <pre><code class='language-cs'>public interface ILoanRepository
 {
-    Loan GetLoanById(int id);
-    IEnumerable<Loan> GetLoansByBranchName(string branchName);
-    IEnumerable<Loan> GetLoansByRegion(string region);
-    IEnumerable<Loan> GetLoansByMinimumAmountInArrears(decimal minimumAmountInArrears);
-    IEnumerable<Loan> GetLoansByInstalmentAmount(decimal instalmentAmount);
-    IEnumerable<Loan> GetLoansByBranchNameAndMinimumAmountInArrears(string branchName, decimal minimumAmountInArrears);
-    IEnumerable<Loan> GetLoansByBranchNameMinimumAmountInArrearsAndInstalmentAmount(string branchName, decimal minimumAmountInArrears, decimal minimumAmountInArrears);
+    IEnumerable<Loan> GetByLoanNumber(int loanNumber);
+    IEnumerable<Loan> GetByBranchName(string branchName);
+    IEnumerable<Loan> GetByRegion(string region);
+    IEnumerable<Loan> GetByMinimumAmountInArrears(decimal minimumAmountInArrears);
+    IEnumerable<Loan> GetByInstalmentAmount(decimal instalmentAmount);
+    IEnumerable<Loan> GetByBranchNameAndMinimumAmountInArrears(string branchName, decimal minimumAmountInArrears);
+    IEnumerable<Loan> GetByBranchNameMinimumAmountInArrearsAndInstalmentAmount(string branchName, decimal minimumAmountInArrears, decimal minimumAmountInArrears);
     //...
 }
 </code></pre>
