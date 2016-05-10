@@ -24,7 +24,7 @@ My first thought was to just do a <code lang="cs" linenumbers="off">ToString()</
 
 What I did manage to find was some code from a project called [LINQ to db40](https://sourcecodebrowser.com/db4o/7.4.121.14026plus-pdfsg/class_db4objects_1_1_db4o_1_1_linq_1_1_expressions_1_1_expression_equality_comparer.html) as well as a [blog series](http://badecho.com/2012/02/expression-equality-comparer-part-i/) by a chappy named Matt Weber. Both of these helped give me a really good starting point, but... unfortunately, both of these were for older versions of the .NET framework. If I wanted to get things working, I was going to have to do a bit of refactoring.
 
-For the custom expression tree comparison, I created an <code lang="cs" linenumbers="off">IEqualityComparer<Expression></code> implementation called <code lang="cs" linenumbers="off">ExpressionEqualityComparer</code> as follows:
+For the custom expression tree comparison, I created an <code lang="cs" linenumbers="off">`IEqualityComparer<Expression>`</code> implementation called <code lang="cs" linenumbers="off">ExpressionEqualityComparer</code> as follows:
 
     public class ExpressionEqualityComparer : IEqualityComparer<Expression>
     {
