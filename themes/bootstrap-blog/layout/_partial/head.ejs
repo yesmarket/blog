@@ -38,4 +38,7 @@
 
   <%- css('css/styles') %>
   <%- partial('google-analytics') %>
+  <% if (!is_archive() && !is_category() && !is_tag()) { %>
+  <%- partial('pushcrew') %>
+  <% } %>
 </head>
